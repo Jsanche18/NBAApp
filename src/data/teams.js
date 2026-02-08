@@ -10,8 +10,8 @@ export const TEAMS = [
   {
     id: "bulls",
     name: "Chicago Bulls",
-    primary: "#CE1141",
-    secondary: "#000000",
+    primary: "#000000",
+    secondary: "#ca0a0ad8",
     logo: require("../../assets/logos/bulls.png"),
     players: ["Zach LaVine", "DeMar DeRozan", "Nikola Vučević", "Lonzo Ball", "Alex Caruso"],
   },
@@ -29,7 +29,7 @@ export const TEAMS = [
     primary: "#006BB6",
     secondary: "#F58426",
     logo: require("../../assets/logos/knicks.png"),
-    players: ["Jalen Brunson", "Julius Randle", "RJ Barrett", "Mitchell Robinson", "Josh Hart"],
+    players: ["Jalen Brunson", "Julius Randle", "RJ Barrett", "Mitchell Robinson", "Claudiu Toma"],
   },
   {
     id: "heat",
@@ -45,7 +45,7 @@ export const TEAMS = [
     primary: "#1D428A",
     secondary: "#FFC72C",
     logo: require("../../assets/logos/warriors.png"),
-    players: ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andrew Wiggins", "Kevon Looney"],
+    players: ["Stephen Curry", "Javier Sancho", "Draymond Green", "Andrew Wiggins", "Kevon Looney"],
   },
 ];
 

@@ -1,26 +1,26 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from "react-native";
+import { TEXT } from "../styles/text";
 import PlayerRow from "./PlayerRow";
 
 export default function TeamPanel({ title, team, onNext }) {
   return (
     <View style={[styles.panel, { borderColor: team.secondary }]}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={[TEXT.subtitle, styles.panelTitle]}>{title}</Text>
 
       <View style={styles.header}>
         <Image source={team.logo} style={styles.logo} />
-        <Text style={styles.teamName} numberOfLines={2}>
+        <Text style={[TEXT.teamName, styles.teamName]} numberOfLines={2}>
           {team.name}
         </Text>
       </View>
 
       <TouchableOpacity style={[styles.btn, { backgroundColor: team.secondary }]} onPress={onNext}>
-        <Text style={[styles.btnText, { color: team.primary }]}>CAMBIAR</Text>
+        <Text style={[TEXT.button, { color: team.primary }]}>CAMBIAR</Text>
       </TouchableOpacity>
 
-      <Text style={styles.rosterTitle}>Jugadores</Text>
+      <Text style={[TEXT.label, styles.rosterTitle]}>Jugadores</Text>
 
-      {/* Lista optimizada (lo pide la práctica) */}
       <FlatList
         data={team.players}
         keyExtractor={(item, index) => item + index}
@@ -36,34 +36,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#0f1630",
     borderWidth: 2,
-    borderRadius: 16,
+    borderRadius: 18,
     padding: 12,
-    minHeight: 360,
+    minHeight: 380,
   },
-  title: {
-    color: "#FFD54A",
-    fontWeight: "900",
-    fontSize: 12,
-    letterSpacing: 1,
-    marginBottom: 10,
+  panelTitle: {
     textAlign: "center",
-  },
-  header: {
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 12,
-  },
-  logo: { width: 64, height: 64, resizeMode: "contain" },
-  teamName: { color: "white", fontWeight: "900", fontSize: 13, textAlign: "center" },
-
-  btn: {
-    paddingVertical: 10,
-    borderRadius: 12,
-    alignItems: "center",
     marginBottom: 10,
   },
-  btnText: { fontWeight: "900" },
+  header: { alignItems: "center", gap: 10, marginBottom: 12 },
+  logo: { width: 86, height: 86, resizeMode: "contain" },
+  teamName: {
+    textAlign: "center",
+    lineHeight: 18,
+  },
 
-  rosterTitle: { color: "#b8c0d9", fontWeight: "800", fontSize: 12, marginBottom: 6 },
+  btn: { paddingVertical: 12, borderRadius: 14, alignItems: "center", marginBottom: 10 },
+
+  rosterTitle: { marginBottom: 6 },
   list: { borderRadius: 12, overflow: "hidden" },
 });

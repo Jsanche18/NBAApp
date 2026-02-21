@@ -4,6 +4,7 @@ import { getTeamById } from "../data/teams";
 import Scoreboard from "../components/Scoreboard";
 import PlayerActionRow from "../components/PlayerActionRow";
 
+
 export default function MatchScreen({ route, navigation }) {
   const { homeId, awayId } = route.params || {};
 
